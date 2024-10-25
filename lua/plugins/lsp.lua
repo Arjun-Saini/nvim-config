@@ -160,6 +160,15 @@ return {
 		local servers = {
 			clangd = {
 				filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "hpp" },
+				cmd = {
+					"clangd",
+					"--log=verbose",
+					"--background-index",
+					"--header-insertion=iwyu",
+					"--header-insertion-decorators",
+					"--pretty",
+					"--clang-tidy",
+				},
 			},
 			ocamllsp = {
 				filetypes = {
@@ -172,7 +181,9 @@ return {
 				},
 			},
 			-- gopls = {},
-			-- pyright = {},
+			pyright = {
+				filetypes = { "python" },
+			},
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 			--

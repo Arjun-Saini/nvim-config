@@ -14,6 +14,7 @@ return {
 				"stylua", -- lua formatter
 				"checkmake", -- linter for Makefiles
 				"ocamlformat",
+				"ruff",
 			},
 			automatic_installation = true,
 		})
@@ -22,6 +23,7 @@ return {
 			diagnostics.checkmake,
 			formatting.stylua,
 			formatting.ocamlformat,
+			diagnostics.ruff,
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
