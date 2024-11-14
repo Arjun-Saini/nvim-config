@@ -18,7 +18,9 @@ vim.keymap.set("n", "<Esc>", ":noh<CR>", opts)
 -- make cutting/deleting/pasting behave like a normal operating system
 vim.keymap.set("n", "x", '"_x', opts)
 vim.keymap.set({ "n", "v" }, "d", '"_d', opts)
+vim.keymap.set({ "n", "v" }, "D", '"_D', opts)
 vim.keymap.set({ "n", "v" }, "c", '"_c', opts)
+vim.keymap.set({ "n", "v" }, "C", '"_C', opts)
 vim.keymap.set("v", "p", '"_dP', opts)
 
 -- Vertical scroll and center

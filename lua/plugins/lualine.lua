@@ -5,7 +5,7 @@ return {
 		local filename = {
 			"filename",
 			file_status = true, -- displays file status (readonly status, modified status)
-			path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
+			path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
 		}
 
 		local hide_in_width = function()
@@ -50,6 +50,8 @@ return {
 				lualine_b = { "branch" },
 				lualine_c = { filename },
 				lualine_x = {
+					-- Show macro recording in statusline
+					{ require("noice").api.statusline.mode.get, cond = require("noice").api.statusline.mode.has },
 					diagnostics,
 					diff,
 					{ "encoding", cond = hide_in_width },
